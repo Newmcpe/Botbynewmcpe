@@ -8,7 +8,7 @@ $data = json_decode(file_get_contents('php://input'));
 switch ($data->type) {
     case 'confirmation':
         echo $confirmation_token;
- //       echo('ok');
+ //       echo('ok');ф
         break;
     case 'wall_post_new':
         $dir = __DIR__ . "/subscribers.txt";
