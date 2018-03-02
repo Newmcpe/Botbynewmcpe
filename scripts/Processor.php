@@ -221,7 +221,7 @@ switch ($data->type) {
                 'user_id' => $user_id,
                 'access_token' => $token,
                 'v' => '5.0'
-            );
+            );//
         }
         if (mb_stripos( $message,"алиса, измерь писос") !== false or mb_stripos( $message,"алиса измерь писос") !== false) {
             $newmessage = "Алиса измерила твой писос";
