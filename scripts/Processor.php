@@ -223,7 +223,7 @@ switch ($data->type) {
                 'v' => '5.0'
             );
         }
-        if (mb_stripos( $message,"алиса, измерь писос") !== false) {
+        if (mb_stripos( $message,"алиса, измерь писо") !== false) {
             $newmessage = "Алиса измерила твой писос";
             $alica = array("photo-154749823_456239628", "photo-154749823_456239629", "photo-154749823_456239630");
             $request_params = array(
