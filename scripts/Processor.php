@@ -8,7 +8,7 @@ $data = json_decode(file_get_contents('php://input'));
 switch ($data->type) {
     case 'confirmation':
         echo $confirmation_token;
- //       echo('ok');ф
+ //       echo('ok');
         break;
     case 'wall_post_new':
         $dir = __DIR__ . "/subscribers.txt";
@@ -223,13 +223,37 @@ switch ($data->type) {
                 'v' => '5.0'
             );
         }
-        if (mb_stripos( $message,"алиса, измерь писос") !== false) {
+        if (mb_stripos( $message,"алиса, измерь писос") !== false or mb_stripos( $message,"алиса измерь писос") !== false) {
             $newmessage = "Алиса измерила твой писос";
             $alica = array("photo-154749823_456239628", "photo-154749823_456239629", "photo-154749823_456239630");
             $request_params = array(
                 'message' => $newmessage,
                 'user_id' => $user_id,
                 'attachment' => $alica [array_rand($alica)],
+                'access_token' => $token,
+                'v' => '5.0'
+            );
+        }
+        if(mb_stripos($message,"алиса") !== false) {
+            $request_params = array(
+                'message' => "Я замещаю алису.Вам что-то надо?",
+                'user_id' => $user_id,
+                'access_token' => $token,
+                'v' => '5.0'
+            );
+        }
+        if(mb_stripos($message,"порно") !== false) {
+            $request_params = array(
+                'message' => "Неа.Не дождёшься.",
+                'user_id' => $user_id,
+                'access_token' => $token,
+                'v' => '5.0'
+            );
+        }
+        if(mb_stripos($message,"витя") !== false) {
+            $request_params = array(
+                'message' => "Легенда.",
+                'user_id' => $user_id,
                 'access_token' => $token,
                 'v' => '5.0'
             );
